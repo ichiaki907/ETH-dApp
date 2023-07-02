@@ -35,10 +35,10 @@ contract WavePortal {
         /*
          * 現在ユーザーがwaveを送信している時刻と、前回waveを送信した時刻が15分以上離れていることを確認。
          */
-        // require(
-        //     lastWavedAt[msg.sender] + 15 minutes < block.timestamp,
-        //     "Wait 15m"
-        // );
+        require(
+            lastWavedAt[msg.sender] + 30 seconds  < block.timestamp,
+            "Wait 15m"
+        );
 
         /*
          * ユーザーの現在のタイムスタンプを更新する
